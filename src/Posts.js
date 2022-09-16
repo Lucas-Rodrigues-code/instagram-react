@@ -1,9 +1,19 @@
-export default function Posts(props) {
+export default function Posts() {
+
+    const post = [
+        {imagemUsuario:"assets/img/meowed.svg",imagemPost:"assets/img/gato-telefone.svg",curtida:"respondeai",nPessoas:"101.523"},
+        {imagemUsuario:"assets/img/barked.svg",imagemPost:"assets/img/dog.svg",curtida:"adorable_animals",nPessoas:"99.159"},
+        
+    ]
+
+
     return (
-        <div class="post">
+        <>
+        {post.map((p) => (
+            <div class="post">
             <div class="topo">
                 <div class="usuario">
-                    <img src={props.imagemUsuario} />
+                    <img src={p.imagemUsuario} />
                     meowed
                 </div>
                 <div class="acoes">
@@ -12,7 +22,7 @@ export default function Posts(props) {
             </div>
 
             <div class="conteudo">
-                <img src={props.imagemPost} />
+                <img src={p.imagemPost} />
             </div>
 
             <div class="fundo">
@@ -30,14 +40,18 @@ export default function Posts(props) {
                 <div class="curtidas">
                     <img src="assets/img/respondeai.svg" />
                     <div class="texto">
-                        Curtido por <strong>{props.curtida}</strong> e
-                        <strong>outras {props.nPessoas} pessoas</strong>
+                        Curtido por <strong>{p.curtida}</strong> e
+                        <strong>outras {p.nPessoas} pessoas</strong>
                     </div>
                 </div>
             </div>
         </div>
-    )
 
+        ))}
+        
+    
+    </>
+    )
 }
 
 

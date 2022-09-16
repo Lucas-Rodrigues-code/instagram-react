@@ -11,11 +11,7 @@ export default function SideBar() {
                     Sugestões para você
                     <div>Ver tudo</div>
                 </div>
-                <Sugestao imagemUsuario="assets/img/bad.vibes.memes.svg" nomeUsuario="bad.vibes.memes" />
-                <Sugestao imagemUsuario="assets/img/chibirdart.svg" nomeUsuario="chibirdart" />
-                <Sugestao imagemUsuario="assets/img/razoesparaacreditar.svg" nomeUsuario="razoesparaacreditar" />
-                <Sugestao imagemUsuario="assets/img/adorable_animals.svg" nomeUsuario="adorable_animals" />
-                <Sugestao imagemUsuario="assets/img/smallcutecats.svg" nomeUsuario="smallcutecats" />
+                <Sugestao/>
             </div>
 
             <div class="links">
