@@ -1,3 +1,5 @@
+import React from "react"
+
 export default function Posts() {
 
     const post = [
@@ -5,6 +7,34 @@ export default function Posts() {
         {imagemUsuario:"assets/img/barked.svg",imagemPost:"assets/img/dog.svg",curtida:"adorable_animals",nPessoas:"99.159"},
         
     ]
+
+
+    const [nPessoas, setNpessoas] = React.useState(101523)
+
+    const [like, SetLike] = React.useState("")
+    console.log(like)
+    function mudarCor(){
+        if(like === ""){
+            SetLike("heart")
+            setNpessoas(nPessoas+ 1)
+        } else{
+            SetLike("")
+            setNpessoas(nPessoas - 1)
+        }
+        
+        
+    }
+
+    const [salvar, setSalvar] = React.useState("")
+
+    function salvarPost(){
+        if(salvar === ""){
+            setSalvar("postSalvo")
+        } else{
+            setSalvar("")
+        }
+
+    }
 
 
     return (
@@ -28,12 +58,12 @@ export default function Posts() {
             <div class="fundo">
                 <div class="acoes">
                     <div>
-                        <ion-icon name="heart-outline"></ion-icon>
+                        <ion-icon name="heart-outline" class={like} onClick={mudarCor}></ion-icon>
                         <ion-icon name="chatbubble-outline"></ion-icon>
                         <ion-icon name="paper-plane-outline"></ion-icon>
                     </div>
                     <div>
-                        <ion-icon name="bookmark-outline"></ion-icon>
+                        <ion-icon name="bookmark-outline" class={salvar} onClick={salvarPost}></ion-icon>
                     </div>
                 </div>
 
@@ -41,7 +71,7 @@ export default function Posts() {
                     <img src="assets/img/respondeai.svg" />
                     <div class="texto">
                         Curtido por <strong>{p.curtida}</strong> e
-                        <strong>outras {p.nPessoas} pessoas</strong>
+                        <strong>outras {nPessoas} pessoas</strong>
                     </div>
                 </div>
             </div>
