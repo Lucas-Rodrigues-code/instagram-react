@@ -401,14 +401,26 @@
   }
   
 
-  .heart{
-    
-    background-color: red;
-    
+
+  .red {
+  
+   color: red;
   }
+.black{
+  color: black;
+}
+  
+  
 
   .postSalvo{
     background-color: #8E8E8E;
     
+    
+  }
+
+  .hide{
+    display: none;
+    
+   
     
   }

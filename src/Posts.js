@@ -12,7 +12,8 @@ export default function Posts() {
     const [nPessoas, setNpessoas] = React.useState(101523)
 
     const [like, SetLike] = React.useState("")
-    console.log(like)
+
+  
     function mudarCor(){
         if(like === ""){
             SetLike("heart")
@@ -58,12 +59,14 @@ export default function Posts() {
             <div class="fundo">
                 <div class="acoes">
                     <div>
-                        <ion-icon name="heart-outline" class={like} onClick={mudarCor}></ion-icon>
+                        <ion-icon name="heart-outline" class ={like === "" ? "" : "hide"}  onClick={mudarCor}></ion-icon>
+                        <ion-icon name="heart" class ={like === "heart" ? "red" : "hide"}  onClick={mudarCor}></ion-icon>
                         <ion-icon name="chatbubble-outline"></ion-icon>
                         <ion-icon name="paper-plane-outline"></ion-icon>
                     </div>
                     <div>
-                        <ion-icon name="bookmark-outline" class={salvar} onClick={salvarPost}></ion-icon>
+                        <ion-icon name="bookmark-outline" class ={salvar === "" ? "" : "hide"}  onClick={salvarPost}></ion-icon>
+                        <ion-icon name="bookmark" class ={salvar === "postSalvo" ? "blsck" : "hide"} onClick={salvarPost}></ion-icon>
                     </div>
                 </div>
 
